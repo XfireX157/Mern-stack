@@ -9,7 +9,6 @@ const tokenLogin = (req, res, next) => {
             if (err) {
                 return res.status(401).send({ message: 'Token Invalid' })
             }
-
             const user = await findId(decode.id)
 
             if (!user || !user._id) return res.status(401).send({ message: "Invalid Token!" })

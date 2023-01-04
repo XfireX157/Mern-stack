@@ -1,7 +1,9 @@
 import { create, findId, findall, update, loginFind, generateToken } from "../Services/userService.js"
 import bcrypt from 'bcrypt'
 
-export const userGetAll = async (__, res) => {
+export const userGetAll = async (req, res) => {
+
+    console.log(req.baseUrl)
     try {
         const users = await findall()
 
