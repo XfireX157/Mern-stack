@@ -16,7 +16,6 @@ export const getAll = async (__, res) => {
 export const created = async (req, res) => {
     try {
         const { img, title, description, price } = req.body
-
         const news = await create({
             img,
             title,
