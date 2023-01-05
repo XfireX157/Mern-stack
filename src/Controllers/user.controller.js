@@ -2,8 +2,6 @@ import { create, findId, findall, update, loginFind, generateToken } from "../Se
 import bcrypt from 'bcrypt'
 
 export const userGetAll = async (req, res) => {
-
-    console.log(req.baseUrl)
     try {
         const users = await findall()
 
@@ -41,7 +39,6 @@ export const userPost = async (req, res) => {
         if (!user) {
             return res.status(400).send({ msg: "Error creating User" })
         }
-
         return res.status(201).send({
             msg: "User created sucess",
             sucess: {
